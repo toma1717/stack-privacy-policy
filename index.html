@@ -20,9 +20,9 @@
 
     <section class="lang-section">
         <h1>Politique de Confidentialité - STACK</h1>
-        <p><strong>Dernière mise à jour :</strong> 9 février 2026</p>
+        <p><strong>Dernière mise à jour :</strong> 10 mars 2026</p>
         
-        <p>L'application <strong>STACK</strong> s'engage à protéger la vie privée de ses utilisateurs. Cette politique détaille de manière exhaustive l'accès et l'utilisation des données de santé et des capteurs de l'appareil.</p>
+        <p>L'application <strong>STACK</strong> s'engage à protéger la vie privée de ses utilisateurs. Cette politique détaille de manière exhaustive l'accès et l'utilisation des données personnelles, des données de santé, des capteurs de l'appareil et des fonctionnalités sociales.</p>
 
         <h3>1. Accès aux données de santé via Health Connect</h3>
         <p>STACK accède aux données de l'API <strong>Health Connect</strong> de Google uniquement pour les fonctionnalités de suivi de performance et de santé.</p>
@@ -41,26 +41,75 @@
             <li><strong>Confidentialité :</strong> Aucune image ou vidéo n'est enregistrée, stockée ou transmise à l'extérieur du téléphone.</li>
         </ul>
 
-        <h3>3. Stockage des Données (Room Database)</h3>
+        <h3>3. Stockage des Données Locales (Room Database)</h3>
         <p>Les données créées par l'utilisateur (repas, notes, tâches et programmes d'entraînement) sont stockées dans une base de données locale sécurisée sur votre appareil. L'utilisateur conserve le contrôle total sur ces données.</p>
 
-        <h3>4. Avis de Non-Responsabilité Médicale</h3>
+        <h3>4. Fonctionnalités Sociales et Données en Ligne</h3>
+        <p>STACK propose des fonctionnalités sociales optionnelles qui nécessitent la création d'un compte et le stockage de données en ligne via les services <strong>Firebase</strong> de Google.</p>
+
+        <h4>4.1 Authentification (Firebase Authentication)</h4>
+        <p>Vous pouvez créer un compte via :</p>
+        <ul>
+            <li><strong>Email et mot de passe :</strong> Votre adresse email et votre mot de passe (chiffré) sont stockés par Firebase Authentication.</li>
+            <li><strong>Connexion Google :</strong> Votre nom, email et photo de profil Google sont récupérés pour créer votre profil.</li>
+        </ul>
+        <p>Les identifiants de compte sont stockés de manière sécurisée via <strong>EncryptedSharedPreferences</strong> sur votre appareil pour permettre le changement rapide de compte.</p>
+
+        <h4>4.2 Profil Utilisateur</h4>
+        <p>Les informations suivantes sont collectées et visibles publiquement par les autres utilisateurs :</p>
+        <ul>
+            <li>Nom d'affichage et nom d'utilisateur</li>
+            <li>Photo de profil (uploadée volontairement)</li>
+            <li>Biographie</li>
+            <li>Nombre d'abonnés et d'abonnements</li>
+        </ul>
+
+        <h4>4.3 Contenu Généré par les Utilisateurs</h4>
+        <p>L'Application permet de publier du contenu partagé avec les autres utilisateurs :</p>
+        <ul>
+            <li><strong>Publications :</strong> Texte, photos et programmes d'entraînement partagés sur le fil d'actualité ou dans des groupes.</li>
+            <li><strong>Commentaires et mentions J'aime :</strong> Interactions avec les publications d'autres utilisateurs.</li>
+            <li><strong>Groupes :</strong> Création et participation à des groupes publics ou privés.</li>
+        </ul>
+        <p>Ce contenu est stocké dans <strong>Firebase Firestore</strong> et les images dans <strong>Firebase Storage</strong>.</p>
+
+        <h4>4.4 Messagerie</h4>
+        <p>STACK propose une messagerie directe entre utilisateurs et une messagerie de groupe. Les messages sont stockés dans Firebase Firestore et sont accessibles uniquement par les participants de la conversation.</p>
+
+        <h4>4.5 Notifications Push (Firebase Cloud Messaging)</h4>
+        <p>L'Application utilise <strong>Firebase Cloud Messaging (FCM)</strong> pour envoyer des notifications push (likes, commentaires, nouveaux abonnés, messages). Un jeton FCM unique est associé à votre appareil et stocké dans Firestore. Vous pouvez désactiver les notifications dans les paramètres de votre appareil.</p>
+
+        <h4>4.6 Modération et Signalement</h4>
+        <p>Les utilisateurs peuvent signaler du contenu inapproprié (harcèlement, spam, contenu inapproprié). Les signalements sont stockés de manière confidentielle et ne sont pas accessibles par les autres utilisateurs. Vous pouvez également bloquer d'autres utilisateurs pour masquer leur contenu.</p>
+
+        <h3>5. Avis de Non-Responsabilité Médicale</h3>
         <p><strong>STACK n'est pas un dispositif médical</strong> et ne permet pas de diagnostiquer, de traiter, de guérir, ni de prévenir un quelconque problème de santé. Les informations affichées sont à titre informatif. Consultez toujours un professionnel de santé pour tout conseil médical.</p>
 
-        <h3>5. Partage de Données</h3>
-        <p>STACK ne partage aucune donnée personnelle avec des tiers. Toutes les données restent sur votre appareil.</p>
+        <h3>6. Partage de Données</h3>
+        <p>STACK ne vend ni ne partage vos données personnelles avec des tiers à des fins commerciales ou publicitaires. Les données locales restent sur votre appareil. Les données sociales sont hébergées sur les serveurs Firebase de Google et sont soumises à la <a href="https://firebase.google.com/support/privacy" target="_blank">politique de confidentialité de Firebase</a>.</p>
 
-        <h3>6. Vos Droits</h3>
-        <p>Vous pouvez à tout moment supprimer vos données en désinstallant l'application ou en effaçant les données depuis les paramètres Android.</p>
+        <h3>7. Suppression de Compte et Données</h3>
+        <p>Vous pouvez supprimer votre compte social à tout moment depuis votre profil dans l'application. Cette action supprime définitivement :</p>
+        <ul>
+            <li>Votre profil et vos informations personnelles</li>
+            <li>Toutes vos publications, commentaires et mentions J'aime</li>
+            <li>Vos conversations et messages</li>
+            <li>Votre appartenance aux groupes</li>
+            <li>Vos notifications et jetons FCM</li>
+        </ul>
+        <p>Les données locales (repas, notes, programmes) peuvent être supprimées en désinstallant l'application ou en effaçant les données depuis les paramètres Android.</p>
+
+        <h3>8. Vos Droits</h3>
+        <p>Conformément au RGPD, vous disposez des droits suivants : accès, rectification, suppression et portabilité de vos données. Pour exercer ces droits, contactez-nous via les coordonnées ci-dessous.</p>
     </section>
 
     <hr>
 
     <section class="lang-section">
         <h1>Privacy Policy - STACK</h1>
-        <p><strong>Last Updated:</strong> February 9, 2026</p>
+        <p><strong>Last Updated:</strong> March 10, 2026</p>
         
-        <p>The <strong>STACK</strong> application is committed to protecting user privacy. This policy provides a comprehensive detail of the access and use of health data and device sensors.</p>
+        <p>The <strong>STACK</strong> application is committed to protecting user privacy. This policy provides a comprehensive detail of the access and use of personal data, health data, device sensors, and social features.</p>
 
         <h3>1. Health Data Access via Health Connect</h3>
         <p>STACK accesses the Google <strong>Health Connect</strong> API data solely for performance and health tracking features.</p>
@@ -79,17 +128,66 @@
             <li><strong>Privacy:</strong> No images or videos are recorded, stored, or transmitted outside of the phone.</li>
         </ul>
 
-        <h3>3. Data Storage (Room Database)</h3>
+        <h3>3. Local Data Storage (Room Database)</h3>
         <p>User-created data (meals, notes, tasks, and workout programs) are stored in a secure local database on your device. The user maintains full control over this data.</p>
 
-        <h3>4. Medical Disclaimer</h3>
+        <h3>4. Social Features and Online Data</h3>
+        <p>STACK offers optional social features that require account creation and online data storage through Google's <strong>Firebase</strong> services.</p>
+
+        <h4>4.1 Authentication (Firebase Authentication)</h4>
+        <p>You can create an account via:</p>
+        <ul>
+            <li><strong>Email and password:</strong> Your email address and password (encrypted) are stored by Firebase Authentication.</li>
+            <li><strong>Google Sign-In:</strong> Your name, email, and Google profile photo are retrieved to create your profile.</li>
+        </ul>
+        <p>Account credentials are securely stored via <strong>EncryptedSharedPreferences</strong> on your device to enable quick account switching.</p>
+
+        <h4>4.2 User Profile</h4>
+        <p>The following information is collected and publicly visible to other users:</p>
+        <ul>
+            <li>Display name and username</li>
+            <li>Profile photo (voluntarily uploaded)</li>
+            <li>Bio</li>
+            <li>Followers and following count</li>
+        </ul>
+
+        <h4>4.3 User-Generated Content</h4>
+        <p>The Application allows publishing content shared with other users:</p>
+        <ul>
+            <li><strong>Posts:</strong> Text, photos, and workout programs shared on the feed or within groups.</li>
+            <li><strong>Comments and Likes:</strong> Interactions with other users' posts.</li>
+            <li><strong>Groups:</strong> Creation and participation in public or private groups.</li>
+        </ul>
+        <p>This content is stored in <strong>Firebase Firestore</strong> and images in <strong>Firebase Storage</strong>.</p>
+
+        <h4>4.4 Messaging</h4>
+        <p>STACK offers direct messaging between users and group messaging. Messages are stored in Firebase Firestore and are accessible only by conversation participants.</p>
+
+        <h4>4.5 Push Notifications (Firebase Cloud Messaging)</h4>
+        <p>The Application uses <strong>Firebase Cloud Messaging (FCM)</strong> to send push notifications (likes, comments, new followers, messages). A unique FCM token is associated with your device and stored in Firestore. You can disable notifications in your device settings.</p>
+
+        <h4>4.6 Content Moderation and Reporting</h4>
+        <p>Users can report inappropriate content (harassment, spam, inappropriate content). Reports are stored confidentially and are not accessible by other users. You can also block other users to hide their content.</p>
+
+        <h3>5. Medical Disclaimer</h3>
         <p><strong>STACK is not a medical device</strong> and is not intended to diagnose, treat, cure, or prevent any health problem. The information displayed is for informational purposes only. Always consult a healthcare professional for any medical advice.</p>
 
-        <h3>5. Data Sharing</h3>
-        <p>STACK does not share any personal data with third parties. All data remains on your device.</p>
+        <h3>6. Data Sharing</h3>
+        <p>STACK does not sell or share your personal data with third parties for commercial or advertising purposes. Local data remains on your device. Social data is hosted on Google's Firebase servers and is subject to the <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>.</p>
 
-        <h3>6. Your Rights</h3>
-        <p>You can delete your data at any time by uninstalling the application or clearing data from Android settings.</p>
+        <h3>7. Account and Data Deletion</h3>
+        <p>You can delete your social account at any time from your profile within the application. This action permanently deletes:</p>
+        <ul>
+            <li>Your profile and personal information</li>
+            <li>All your posts, comments, and likes</li>
+            <li>Your conversations and messages</li>
+            <li>Your group memberships</li>
+            <li>Your notifications and FCM tokens</li>
+        </ul>
+        <p>Local data (meals, notes, programs) can be deleted by uninstalling the application or clearing data from Android settings.</p>
+
+        <h3>8. Your Rights</h3>
+        <p>In accordance with GDPR, you have the following rights: access, rectification, deletion, and portability of your data. To exercise these rights, contact us using the information below.</p>
     </section>
 
     <div class="footer">
